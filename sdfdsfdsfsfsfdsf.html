@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prestigious Discord Server</title>
+<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #f4eee1; /* parchment background */
+        font-family: 'Cinzel', serif;
+        color: #3b2e2a;
+        line-height: 1.8;
+        user-select: none;
+    }
+
+    /* Glow effect container */
+    section.glow {
+        position: relative;
+        overflow: hidden;
+    }
+    section.glow::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255, 245, 220, 0.3), transparent 70%);
+        pointer-events: none;
+        animation: flicker 3s infinite alternate;
+    }
+
+    @keyframes flicker {
+        0% { transform: rotate(0deg) scale(1); opacity: 0.3; }
+        50% { transform: rotate(2deg) scale(1.02); opacity: 0.4; }
+        100% { transform: rotate(-2deg) scale(0.98); opacity: 0.35; }
+    }
+
+    header, footer {
+        text-align: center;
+        padding: 30px 20px;
+        background: #fff8eb;
+        border-bottom: 2px solid #d3bfa4;
+        pointer-events: none;
+    }
+
+    h1, h2 {
+        color: #5a3e36;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        pointer-events: none;
+    }
+
+    section {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 30px;
+        background: #fff8eb;
+        border: 3px solid #d3bfa4;
+        border-radius: 25px;
+        box-shadow: 0 0 35px rgba(0,0,0,0.25);
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 1s ease-in-out;
+        pointer-events: none;
+        position: relative;
+    }
+
+    /* Parchment edges */
+    section::before, section::after {
+        content: "";
+        position: absolute;
+        left: -5px;
+        width: calc(100% + 10px);
+        height: 8px;
+        background: #d3bfa4;
+        border-radius: 4px;
+    }
+    section::before { top: 0; }
+    section::after { bottom: 0; }
+
+    .chapter {
+        font-family: 'MedievalSharp', cursive;
+        font-size: 1.6em;
+        text-align: center;
+        margin: 25px 0;
+        color: #7a4a3a;
+        border-top: 2px solid #d3bfa4;
+        border-bottom: 2px solid #d3bfa4;
+        padding: 10px 0;
+        pointer-events: none;
+    }
+
+    ul {
+        line-height: 1.8;
+        pointer-events: none;
+    }
+
+    .invite-btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 15px 35px;
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #fff;
+        background: linear-gradient(45deg, #8b5e3c, #d3bfa4);
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        box-shadow: 0 0 25px rgba(139,94,60,0.6);
+        transition: all 0.3s ease;
+        pointer-events: auto;
+    }
+    .invite-btn:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 40px rgba(139,94,60,0.8);
+    }
+
+</style>
+</head>
+<body>
+
+<header>
+    <h1>🏛️ Welcome to the Prestigious Discord Server</h1>
+    <p>Join a society of over <strong>100,000 members</strong> with a legacy spanning <strong>over 1,000 years</strong>.</p>
+</header>
+
+<section class="fade-in glow">
+    <div class="chapter">📜 Rules of the Ancient Assembly</div>
+    <ul>
+        <li>Respect all members – Courtesy and civility are paramount.</li>
+        <li>No spam or self-promotion – Preserve the society’s prestige.</li>
+        <li>Keep it safe – No NSFW, harmful, or illegal content.</li>
+        <li>Stay on topic – Channels serve a purpose; follow them.</li>
+        <li>Respect moderators – Their word is final in maintaining order.</li>
+        <li>Contribute with value – Meaningful participation sustains the legacy.</li>
+    </ul>
+</section>
+
+<section class="fade-in glow">
+    <div class="chapter">📖 History of the Server</div>
+    <p><strong>Chapter I — The Founding 🏰</strong><br>
+    Over a thousand years ago, visionaries conceived a fellowship destined to endure the test of time.</p>
+    <p><strong>Chapter II — The Age of Growth 🌿</strong><br>
+    Generations expanded this society, codifying values of honor, wisdom, and unity.</p>
+    <p><strong>Chapter III — The Modern Era ⚔️</strong><br>
+    Discord became the home of this fellowship, now <strong>100,000+ members</strong> strong, continuing the traditions of old.</p>
+    <p><strong>Chapter IV — The Present Day 🌟</strong><br>
+    Every member contributes to a living legacy that spans centuries.</p>
+    <p><strong>Chapter V — The Eternal Future 🔮</strong><br>
+    The order endures. Every newcomer becomes a custodian of history, carrying forward a millennium of prestige.</p>
+</section>
+
+<section class="fade-in glow" style="text-align:center;">
+    <div class="chapter">✨ Join the Legacy ✨</div>
+    <p>Step into a <strong>digital kingdom</strong> where history and fellowship converge.</p>
+    <button class="invite-btn" onclick="window.open('https://discord.gg/VqFwHEW9J4','_blank')">Enter the Prestigious Server</button>
+</section>
+
+<footer>
+    <p>© 2025 Prestigious Discord Server — Custodians of a 1,000-year legacy</p>
+</footer>
+
+<script>
+    // Fade-in sections
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.3 };
+    const appearOnScroll = new IntersectionObserver(function(entries, observer){
+        entries.forEach(entry => {
+            if(!entry.isIntersecting) return;
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = 'translateY(0)';
+            observer.unobserve(entry.target);
+        });
+    }, appearOptions);
+    faders.forEach(fader => appearOnScroll.observe(fader));
+
+    // Disable right-click
+    document.addEventListener('contextmenu', event => event.preventDefault());
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prestigious Discord Server</title>
+<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #f4eee1; /* parchment background */
+        font-family: 'Cinzel', serif;
+        color: #3b2e2a;
+        line-height: 1.8;
+        user-select: none;
+    }
+
+    /* Glow effect container */
+    section.glow {
+        position: relative;
+        overflow: hidden;
+    }
+    section.glow::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255, 245, 220, 0.3), transparent 70%);
+        pointer-events: none;
+        animation: flicker 3s infinite alternate;
+    }
+
+    @keyframes flicker {
+        0% { transform: rotate(0deg) scale(1); opacity: 0.3; }
+        50% { transform: rotate(2deg) scale(1.02); opacity: 0.4; }
+        100% { transform: rotate(-2deg) scale(0.98); opacity: 0.35; }
+    }
+
+    header, footer {
+        text-align: center;
+        padding: 30px 20px;
+        background: #fff8eb;
+        border-bottom: 2px solid #d3bfa4;
+        pointer-events: none;
+    }
+
+    h1, h2 {
+        color: #5a3e36;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        pointer-events: none;
+    }
+
+    section {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 30px;
+        background: #fff8eb;
+        border: 3px solid #d3bfa4;
+        border-radius: 25px;
+        box-shadow: 0 0 35px rgba(0,0,0,0.25);
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 1s ease-in-out;
+        pointer-events: none;
+        position: relative;
+    }
+
+    /* Parchment edges */
+    section::before, section::after {
+        content: "";
+        position: absolute;
+        left: -5px;
+        width: calc(100% + 10px);
+        height: 8px;
+        background: #d3bfa4;
+        border-radius: 4px;
+    }
+    section::before { top: 0; }
+    section::after { bottom: 0; }
+
+    .chapter {
+        font-family: 'MedievalSharp', cursive;
+        font-size: 1.6em;
+        text-align: center;
+        margin: 25px 0;
+        color: #7a4a3a;
+        border-top: 2px solid #d3bfa4;
+        border-bottom: 2px solid #d3bfa4;
+        padding: 10px 0;
+        pointer-events: none;
+    }
+
+    ul {
+        line-height: 1.8;
+        pointer-events: none;
+    }
+
+    .invite-btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 15px 35px;
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #fff;
+        background: linear-gradient(45deg, #8b5e3c, #d3bfa4);
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        box-shadow: 0 0 25px rgba(139,94,60,0.6);
+        transition: all 0.3s ease;
+        pointer-events: auto;
+    }
+    .invite-btn:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 40px rgba(139,94,60,0.8);
+    }
+
+</style>
+</head>
+<body>
+
+<header>
+    <h1>🏛️ Welcome to the Prestigious Discord Server</h1>
+    <p>Join a society of over <strong>100,000 members</strong> with a legacy spanning <strong>over 1,000 years</strong>.</p>
+</header>
+
+<section class="fade-in glow">
+    <div class="chapter">📜 Rules of the Ancient Assembly</div>
+    <ul>
+        <li>Respect all members – Courtesy and civility are paramount.</li>
+        <li>No spam or self-promotion – Preserve the society’s prestige.</li>
+        <li>Keep it safe – No NSFW, harmful, or illegal content.</li>
+        <li>Stay on topic – Channels serve a purpose; follow them.</li>
+        <li>Respect moderators – Their word is final in maintaining order.</li>
+        <li>Contribute with value – Meaningful participation sustains the legacy.</li>
+    </ul>
+</section>
+
+<section class="fade-in glow">
+    <div class="chapter">📖 History of the Server</div>
+    <p><strong>Chapter I — The Founding 🏰</strong><br>
+    Over a thousand years ago, visionaries conceived a fellowship destined to endure the test of time.</p>
+    <p><strong>Chapter II — The Age of Growth 🌿</strong><br>
+    Generations expanded this society, codifying values of honor, wisdom, and unity.</p>
+    <p><strong>Chapter III — The Modern Era ⚔️</strong><br>
+    Discord became the home of this fellowship, now <strong>100,000+ members</strong> strong, continuing the traditions of old.</p>
+    <p><strong>Chapter IV — The Present Day 🌟</strong><br>
+    Every member contributes to a living legacy that spans centuries.</p>
+    <p><strong>Chapter V — The Eternal Future 🔮</strong><br>
+    The order endures. Every newcomer becomes a custodian of history, carrying forward a millennium of prestige.</p>
+</section>
+
+<section class="fade-in glow" style="text-align:center;">
+    <div class="chapter">✨ Join the Legacy ✨</div>
+    <p>Step into a <strong>digital kingdom</strong> where history and fellowship converge.</p>
+    <button class="invite-btn" onclick="window.open('https://discord.gg/VqFwHEW9J4','_blank')">Enter the Prestigious Server</button>
+</section>
+
+<footer>
+    <p>© 2025 Prestigious Discord Server — Custodians of a 1,000-year legacy</p>
+</footer>
+
+<script>
+    // Fade-in sections
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.3 };
+    const appearOnScroll = new IntersectionObserver(function(entries, observer){
+        entries.forEach(entry => {
+            if(!entry.isIntersecting) return;
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = 'translateY(0)';
+            observer.unobserve(entry.target);
+        });
+    }, appearOptions);
+    faders.forEach(fader => appearOnScroll.observe(fader));
+
+    // Disable right-click
+    document.addEventListener('contextmenu', event => event.preventDefault());
+</script>
+
+</body>
+</html>
